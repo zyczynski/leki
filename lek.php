@@ -13,7 +13,7 @@ class Lek
         $this->zapotrzebowanie = $zapotrzebowanie;
     }
 
-   
+
     public function getNazwa()
     {
         return $this->nazwa;
