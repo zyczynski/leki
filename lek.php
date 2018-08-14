@@ -13,28 +13,23 @@ class Lek
         $this->zapotrzebowanie = $zapotrzebowanie;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getNazwa()
     {
         return $this->nazwa;
     }
 
-    /**
-     * @param mixed $ilosc
-     */
-    public function setIlosc($ilosc)
+
+    public function getIlosc()
     {
-        $this->ilosc = $ilosc;
+        return $this->ilosc;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getZapotrzebowanie()
     {
         return $this->zapotrzebowanie;
     }
 
 }
+
