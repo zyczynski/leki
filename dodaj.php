@@ -1,5 +1,7 @@
 <?php
 
+require_once 'database/database.php';
+
 if (isset($_POST['lek']))
 {
     require_once 'lek.php';
