@@ -10,14 +10,13 @@ if (isset($_POST['lek']))
    // echo '<br>';
 
 
-    $lek = [$lek->getNazwa(), $lek->getIlosc(), $lek->getZapotrzebowanie()];
+    $nazwa_leku = $lek->getNazwa();
+    $ilosc_leku = $lek->getIlosc();
+    $zapotrzebowanie_na_lek = $lek->getZapotrzebowanie();
 
-    $result = $db->exec('INSERT INTO customers(Nazwa, Ilosc, Zapotrzebowanie)
-    VALUES (foreach ($lek as $leki)
-    {
-    return $leki;   
-    });
-}
+    $result = $db->exec('INSERT INTO leki (Nazwa, Ilosc, Zapotrzebowanie)
+    VALUES ('$nazwa_leku', '$ilosc_leku', '$zapotrzebowanie_na_lek'));
+  }
 
 //var_dump($lek);
 
