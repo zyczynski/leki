@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 
 
 $config = require_once 'config.php';
@@ -16,5 +16,6 @@ try
 
 catch (PDOException $error)
 {
+    echo $error;
     exit('błąd bazy danych');
 }

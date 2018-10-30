@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 require_once 'database/database.php';
 
 if (isset($_POST['lek']))
@@ -15,7 +15,13 @@ if (isset($_POST['lek']))
     $zapotrzebowanie_na_lek = $lek->getZapotrzebowanie();
 
     $result = $db->exec('INSERT INTO leki (Nazwa, Ilosc, Zapotrzebowanie)
-    VALUES ('$nazwa_leku', '$ilosc_leku', '$zapotrzebowanie_na_lek'));
+    VALUES ('.$nazwa_leku.', '.$ilosc_leku.', '.$zapotrzebowanie_na_lek.')');
+
+    echo "dodano do bazy";
+  }
+  else
+  {
+      echo "nie udało się dodać do bazy";
   }
 
 //var_dump($lek);
