@@ -10,12 +10,9 @@ if (isset($_POST['lek']))
    // echo '<br>';
 
 
-    $nazwa_leku = $lek->getNazwa();
-    $ilosc_leku = $lek->getIlosc();
-    $zapotrzebowanie_na_lek = $lek->getZapotrzebowanie();
 
     $result = $db->exec('INSERT INTO leki (Nazwa, Ilosc, Zapotrzebowanie)
-    VALUES ('.$nazwa_leku.', '.$ilosc_leku.', '.$zapotrzebowanie_na_lek.')');
+    VALUES ('.$lek->getNazwa().', '.$lek->getIlosc().', '.$lek->getZapotrzebowanie().')');
 
     echo "dodano do bazy";
   }
