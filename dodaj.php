@@ -11,8 +11,9 @@ if (isset($_POST['lek']))
 
 
 
-    $result = $db->exec('INSERT INTO leki (Nazwa, Ilosc, Zapotrzebowanie)
-    VALUES ('.$lek->getNazwa().', '.$lek->getIlosc().', '.$lek->getZapotrzebowanie().')');
+    $sql = "INSERT INTO leki (Nazwa, Ilosc, Zapotrzebowanie, Data) VALUES (?,?,?,?)";
+    $stmt= $pdo->prepare($sql);
+    $stmt->execute([$lek->getNazwa(),$lek->getIlosc(), $lek->getZapotrzebowanie(), '2018-11-10']);
 
     echo "dodano do bazy";
   }
