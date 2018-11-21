@@ -33,16 +33,19 @@ $wyniki = $pdo->query('SELECT * FROM leki')->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($wyniki as $wynik)
     {
+        $lek = $wynik['Nazwa'];
+        $id = $wynik['id'];
         echo "<tr><td>{$wynik['id']}</td>
               <td>{$wynik['Nazwa']}</td>
               <td>{$wynik['Ilosc']}</td>
               <td>{$wynik['Zapotrzebowanie']}</td>
               <td>{$wynik['Data']}</td>
+              <td><a href=\"update.php?lek = <?php echo $lek ?>?id = <?php echo $id; ?>\"> edit </a></td>
               </tr>";
 
     }
-
     ?>
+
     </tbody>
 </table>
 
