@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 session_start();
 
-
 if ($_POST['nazwa'])
 {
     require_once 'database/database.php';

@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+
+session_start();
+$_SESSION['id'] = $_GET['id'];
+
+?>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
