@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-$_SESSION['id'] = $_GET['id'];
-
-?>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +20,7 @@ $_SESSION['id'] = $_GET['id'];
 
             <tr>
 
-              <form action='after_update.php' method='post'>
+              <form action='' method='post'>
                 <td><input name="nazwa" type="text"</input></td>
                  <td><input name="ilosc" type="text"</input></td>
                 <td><input name="zapotrzebowanie" type="text"</input></td>
@@ -41,3 +35,19 @@ $_SESSION['id'] = $_GET['id'];
 </form>
 </body>
 </html>
+
+<?php
+if ($_POST)
+{
+require_once 'database/database.php';
+
+$sql = "UPDATE leki SET Nazwa = ?, Ilosc = ?, Zapotrzebowanie = ? WHERE id = ?";
+$pdo->prepare($sql)->execute([$_POST['nazwa'], $_POST['ilosc'], $_POST['zapotrzebowanie'], $_GET['id']]);
+
+echo "Zaktualizowano";
+}
+else
+{
+echo "nie udało się wykonać aktualizacji";
+}
+?>
