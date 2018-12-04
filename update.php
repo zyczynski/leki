@@ -37,8 +37,9 @@
 </html>
 
 <?php
-if ($_POST)
+if (($_POST['nazwa']) != '')
 {
+
 require_once 'database/database.php';
 
 $sql = "UPDATE leki SET Nazwa = ?, Ilosc = ?, Zapotrzebowanie = ? WHERE id = ?";
