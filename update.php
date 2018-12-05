@@ -20,7 +20,7 @@
 
             <tr>
 
-              <form action='' method='post'>
+              <form action='dupa.php' method='post'>
                 <td><input name="nazwa" type="text"</input></td>
                  <td><input name="ilosc" type="text"</input></td>
                 <td><input name="zapotrzebowanie" type="text"</input></td>
@@ -37,7 +37,7 @@
 </html>
 
 <?php
-if (($_POST['nazwa']) != '')
+if (isset($_GET['ilosc']))
 {
 
 require_once 'database/database.php';
