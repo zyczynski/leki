@@ -1,3 +1,8 @@
+<?php
+$id = $_GET['id'];
+echo $id;
+?>
+
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +24,13 @@
     <tbody>
 
             <tr>
-
-              <form action='dupa.php' method='post'>
+                <?php"<form action='dupa.php?id=$id;' method='post'>"?>
                 <td><input name="nazwa" type="text"</input></td>
                  <td><input name="ilosc" type="text"</input></td>
                 <td><input name="zapotrzebowanie" type="text"</input></td>
 
               </tr>
+
 
 
     </tbody>
@@ -35,20 +40,3 @@
 </form>
 </body>
 </html>
-
-<?php
-if (isset($_GET['ilosc']))
-{
-
-require_once 'database/database.php';
-
-$sql = "UPDATE leki SET Nazwa = ?, Ilosc = ?, Zapotrzebowanie = ? WHERE id = ?";
-$pdo->prepare($sql)->execute([$_POST['nazwa'], $_POST['ilosc'], $_POST['zapotrzebowanie'], $_GET['id']]);
-
-echo "Zaktualizowano";
-}
-else
-{
-echo "nie udało się wykonać aktualizacji";
-}
-?>
