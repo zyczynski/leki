@@ -20,7 +20,7 @@
 
             <tr>
 
-              <form action='dupa.php' method='post'>
+              <form action='dupa.php?twoja=stara' method='post'>
                 <td><input name="nazwa" type="text"</input></td>
                  <td><input name="ilosc" type="text"</input></td>
                 <td><input name="zapotrzebowanie" type="text"</input></td>

@@ -5,4 +5,5 @@
  * Date: 05/12/2018
  * Time: 12:55
  */
-echo $_GET['id'];
+echo $_GET['twoja'];
+print_r($_POST);
