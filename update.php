@@ -24,10 +24,10 @@ echo $id;
     <tbody>
 
             <tr>
-                <?php"<form action='dupa.php?id=$id;' method='post'>"?>
-                <td><input name="nazwa" type="text"</input></td>
-                 <td><input name="ilosc" type="text"</input></td>
-                <td><input name="zapotrzebowanie" type="text"</input></td>
+                <form action='after_update.php?id=<?php echo $_GET['id']; ?>' method='post'>
+                    <td><input name="nazwa" type="text"</input></td>
+                    <td><input name="ilosc" type="text"</input></td>
+                    <td><input name="zapotrzebowanie" type="text"</input></td>
 
               </tr>
 
