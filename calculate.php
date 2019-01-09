@@ -14,7 +14,7 @@ foreach ($wyniki as $wynik)
         $datetime1 = new DateTime($data_dodania);
         $datetime2 = new DateTime($dzisiejsza_data);
         $interval = $datetime1->diff($datetime2);
-        $pozostalo = (int)($interval->format('%R%a days')) * ($zapotrzebowanie);
+        $pozostalo = ($interval->format('%R%a')) * ($zapotrzebowanie);
 
         echo $pozostalo;
         echo "<br>";
