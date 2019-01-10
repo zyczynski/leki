@@ -11,9 +11,9 @@ foreach ($wyniki as $wynik)
 
         $zapotrzebowanie = $wynik['Zapotrzebowanie'];
 
-        $datetime1 = new DateTime($wynik['Data']);
-        $datetime2 = new DateTime(date("Y-m-d"));
-        $interval = $datetime1->diff($datetime2);
+        $dataDodania = new DateTime($wynik['Data']);
+        $dzisiejszaData = new DateTime(date("Y-m-d"));
+        $interval = $dataDodania->diff($dzisiejszaData);
         $pozostalo = ($interval->format('%R%a')) * ($zapotrzebowanie);
 
         echo $pozostalo;
